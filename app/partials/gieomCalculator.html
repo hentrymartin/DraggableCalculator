@@ -1,0 +1,88 @@
+<main>
+            <div class="row">
+
+                <!-- Header -->
+                <div class="col-sm-12 clearfix header">
+                    <div class="col-sm-6 margin-top title">
+                        <div class="col-sm-12"><h3>Gieom Rich Calculator</h3></div>
+                        <div class="col-sm-12">-a quest to design advance, feature rich calculator</div>
+                    </div>
+                    <div class="col-sm-6 margin-top margin-bottom">
+                        <div class="col-sm-12 history-wrapper clearfix">
+                            <div class="col-sm-6 col-xs-6 margin-top">
+                                History
+                            </div>
+                            <div class="col-sm-6 col-xs-6 margin-top">
+                                <input type="checkbox" gieom-switch name="myCheckbox" data-value="isHistory" change-function="onChangeState(value)">
+                                <toggle-switch>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 margin-top margin-bottom"><span>Total Calculations:</span></div>
+                            <div class="col-sm-6 col-xs-6 margin-top margin-bottom"><span data-ng-bind="totalCalculations"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculator area -->
+                <div class="col-sm-12 app-area">
+                    <div class="col-sm-9">
+
+                        <!-- Draggable container -->
+                        <div class="calculator" gieom-draggable>
+                            <div class="inner-border">
+                                <div class="display">
+                                    <div class="cirlces-area">
+                                        <span class="circle red"></span>
+                                        <span class="circle yellow"></span>
+                                        <span class="circle green"></span>
+                                    </div>
+                                    <div class="input-holder">
+                                        <input type="text" class="form-control input-area" ng-model="inputNumber">
+                                    </div>
+                                </div>
+                                <div class="keys">
+                                    <div class="keys-row first-row">
+                                        <div class="each-key" ng-click="enterValue('C', 'clear', $event)"><span class="key">C</span></div>
+                                        <div class="each-key" ng-click="enterValue('+/-', 'operator', $event)"><span class="key">+/-</span></div>
+                                        <div class="each-key" ng-click="enterValue('%', 'operator', $event)"><span class="key">%</span></div>
+                                        <div class="each-key operator" ng-click="enterValue('/', 'operator', $event)"><span class="key">/</span></div>
+                                    </div>
+                                    <div class="keys-row">
+                                        <div class="each-key" ng-click="enterValue('7', 'operand', $event)"><span class="key">7</span></div>
+                                        <div class="each-key" ng-click="enterValue('8', 'operand', $event)"><span class="key">8</span></div>
+                                        <div class="each-key" ng-click="enterValue('9', 'operand', $event)"><span class="key">9</span></div>
+                                        <div class="each-key operator" ng-click="enterValue('*', 'operator', $event)"><span class="key">*</span></div>
+                                    </div>
+                                    <div class="keys-row">
+                                        <div class="each-key" ng-click="enterValue('4', 'operand', $event)"><span class="key">4</span></div>
+                                        <div class="each-key" ng-click="enterValue('5', 'operand', $event)"><span class="key">5</span></div>
+                                        <div class="each-key" ng-click="enterValue('6', 'operand', $event)"><span class="key">6</span></div>
+                                        <div class="each-key operator" ng-click="enterValue('-', 'operator', $event)"><span class="key">-</span></div>
+                                    </div>
+                                    <div class="keys-row">
+                                        <div class="each-key" ng-click="enterValue('1', 'operand', $event)"><span class="key">1</span></div>
+                                        <div class="each-key" ng-click="enterValue('2', 'operand', $event)"><span class="key">2</span></div>
+                                        <div class="each-key" ng-click="enterValue('3', 'operand', $event)"><span class="key">3</span></div>
+                                        <div class="each-key operator" ng-click="enterValue('+', 'operator', $event)"><span class="key">+</span></div>
+                                    </div>
+                                    <div class="keys-row">
+                                        <div class="each-key border-right-none zero" ng-click="enterValue('0', 'operand', $event)"><span class="key">0</span></div>
+                                        <div class="each-key" ng-click="enterValue('.', 'separator', $event)"><span class="key">.</span></div>
+                                        <div class="each-key operator" ng-click="enterValue('=', 'operator', $event)"><span class="key">=</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- History section -->
+                    <div class="col-sm-3 history-section">
+                        <div class="history-holder"><span class="glyphicon glyphicon-th-list"></span><span  class="history-label">History</span></div>
+                        <div class="history-list">
+                            <div class="history-pill col-sm-12" data-ng-repeat="each in history" data-ng-click="loadFromHistory(each)">
+                                <div class="col-sm-10 col-xs-10 text-center expression">{{each.expression}}</div>
+                                <div class="col-sm-2 col-xs-2s"><span class="glyphicon glyphicon-align-justify icon-top" data-tool-tip data-value="each.result" data-toggle="tooltip" data-placement="left"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>

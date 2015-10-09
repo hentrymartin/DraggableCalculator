@@ -1,0 +1,3 @@
+ApplicationName = 'gieom Calculator'
+Author = 'Hentry Martin'
+Description = 'This is a calculator which can dragged across the screen and the results are stored in local storage'

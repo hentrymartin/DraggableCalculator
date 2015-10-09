@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Title and meta tag -->
+        <title>GIEOM</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Loading Script tags -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://code.angularjs.org/1.2.0/angular-animate.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.15/toaster.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+
+        <!-- Loading styles -->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap2/bootstrap-switch.css"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.15/toaster.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css" rel="stylesheet" />
+        <link href="assets/styles/app.css" rel="stylesheet" />
+	   
+        <!-- Application files -->
+        <script src="app/app.js"></script>
+
+        <!-- Controllers -->
+        <script src="app/js/controllers/calculator.controller.js"></script>
+        
+        <!-- Directives -->
+        <script src="app/js/directives/gieom.directives.js"></script>
+
+    </head>
+    <!-- Application starts here-->
+    <body data-ng-app="gieom" class="full-height container animator">
+
+        <!-- Toaster container for indication -->
+        <toaster-container></toaster-container>
+
+        <!-- This is the functional area -->
+        <div ui-view></div>
+
+    </body>
+</html>
